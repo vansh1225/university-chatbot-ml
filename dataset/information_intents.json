@@ -1,0 +1,89 @@
+{
+    "intents": [
+        {
+            "tag": "course_details",
+            "patterns": [
+                "What courses are offered?",
+                "List available courses",
+                "Tell me about courses",
+                "Course information",
+                "What classes can I take"
+            ],
+            "responses": [
+                "We offer a wide range of courses including Computer Science, Data Science, AI, Engineering, Mathematics, and Business programs. Each program has both core and elective courses designed to provide comprehensive education in the field."
+            ]
+        },
+        {
+            "tag": "university_details",
+            "patterns": [
+                "Tell me about the university",
+                "What is the university name?",
+                "University history",
+                "When was the university founded",
+                "University information"
+            ],
+            "responses": [
+                "Illinois Institute of Technology was established in 1940. We're known for our excellence in engineering, architecture, business, and technology education. Our main campus is located in Chicago, and we have several satellite campuses."
+            ]
+        },
+        {
+            "tag": "admissions_general",
+            "patterns": [
+              "How do I apply to IIT?",
+              "What are the admission requirements?",
+              "Tell me about the application process",
+              "When are the application deadlines?",
+              "How can I apply for admission?",
+              "What documents do I need for admission?",
+              "Is there an application fee?"
+            ],
+            "responses": [
+              "Our admissions process is straightforward. You can apply online through our admissions portal at apply.iit.edu. The application fee is $60, and you'll need to submit transcripts, test scores, and a personal statement. For undergraduate programs, the early decision deadline is November 1, and regular decision is January 15."
+            ]
+          },
+          {
+            "tag": "academic_programs",
+            "patterns": [
+              "What majors do you offer?",
+              "Tell me about your engineering programs",
+              "What degrees are available?",
+              "Do you have computer science?",
+              "What programs are available?",
+              "List of departments",
+              "Available courses"
+            ],
+            "responses": [
+              "IIT offers over 80 undergraduate and graduate programs across various fields. Our strongest programs include Engineering (Civil, Mechanical, Electrical, Computer), Computer Science, Architecture, Business, and Law. Each college has multiple departments and specialized concentrations."
+            ]
+          },
+          {
+            "tag": "facilities",
+            "patterns": [
+              "Where is the library?",
+              "Computer lab locations",
+              "Research facilities",
+              "Athletic facilities",
+              "Study spaces",
+              "Where can I print?",
+              "Is there a gym on campus?"
+            ],
+            "responses": [
+              "Our campus has comprehensive facilities: The Galvin Library is in the center of campus, open 24/7 during finals. We have computer labs in every academic building, a state-of-the-art fitness center (Keating Sports Center), multiple research facilities, and study spaces throughout campus including the MTCC and academic buildings."
+            ]
+          },
+          {
+            "tag": "tuition",
+            "patterns": [
+              "How much is tuition?",
+              "Cost of attendance",
+              "Tuition fees",
+              "How expensive is IIT?",
+              "Price of education",
+              "Annual cost"
+            ],
+            "responses": [
+              "For the current academic year, undergraduate tuition is approximately $49,500 per year. Graduate programs vary by department, ranging from $1,600 to $2,000 per credit hour. Additional fees include housing ($12,000-15,000/year), meal plans ($4,000-6,000/year), and student fees ($2,000/year). Many students receive financial aid and scholarships."
+            ]
+          }
+    ]
+}

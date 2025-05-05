@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IIT Chatbot</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .chat-container {
+            width: 600px;
+            background: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .chat-header {
+            background: #d32f2f;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            font-size: 18px;
+            position: relative;
+        }
+        .chat-box {
+            height: 500px;
+            overflow-y: auto;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        .chat-input {
+            display: flex;
+            padding: 10px;
+            background: #fff;
+        }
+        .chat-input input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            outline: none;
+        }
+        .chat-input button {
+            padding: 10px;
+            margin-left: 5px;
+            background: #d32f2f;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .chat-message {
+            margin: 5px 0;
+            padding: 8px;
+            border-radius: 5px;
+            max-width: 75%;
+        }
+        .user-message {
+            background: #d32f2f;
+            color: white;
+            align-self: flex-end;
+            margin-left: auto;
+        }
+        .bot-message {
+            background: #ddd;
+            align-self: flex-start;
+        }
+        .ml-info {
+            font-size: 13px;
+            color: #555;
+            background: #f1f1f1;
+            margin-top: -5px;
+            padding: 5px 10px;
+            border-left: 3px solid #d32f2f;
+        }
+        .category-selector {
+            padding: 10px;
+            background: #f9f9f9;
+            border-bottom: 1px solid #ddd;
+            display: none;
+        }
+        .category-selector select {
+            padding: 5px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: 100%;
+        }
+        .suggestion {
+            background: #f0f0f0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin: 5px 0;
+            padding: 5px 10px;
+            cursor: pointer;
+            display: inline-block;
+            margin-right: 5px;
+        }
+        .suggestion:hover {
+            background: #e0e0e0;
+        }
+        .history-button {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            background: #f0f0f0;
+            border: 1px solid #ddd;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .history-dialog {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            max-width: 600px;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            z-index: 100;
+        }
+        .history-close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            font-size: 20px;
+        }
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 99;
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay" id="overlay"></div>
+    <div class="history-dialog" id="history-dialog">
+        <div class="history-close" onclick="closeHistory()">×</div>
+        <h2>Conversation History</h2>
+        <div id="history-content"></div>
+    </div>
+
+    <div class="chat-container">
+        <div class="chat-header">
+            IIT Chatbot
+            <button class="history-button" onclick="showHistory()">History</button>
+        </div>
+        <div class="category-selector" id="category-selector">
+            <select id="category-select">
+                <option value="">Please select a category</option>
+                <option value="information">Information</option>
+                <option value="events">Events</option>
+                <option value="support">Support</option>
+            </select>
+        </div>
+        <div class="chat-box" id="chat-box"></div>
+        <div class="chat-input">
+            <input type="text" id="user-input" placeholder="Type a message..." />
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
+    <script>
+        var currentCategory = "";
+        var conversationHistory = [];
+
+        function sendMessage() {
+            var userInput = $("#user-input").val();
+            if (userInput.trim() === "") return;
+
+            $("#chat-box").append('<div class="chat-message user-message">' + userInput + '</div>');
+            conversationHistory.push({role: "user", message: userInput});
+
+            if (userInput === "1" || userInput.toLowerCase() === "information" || userInput.toLowerCase() === "info") {
+                currentCategory = "information";
+            } else if (userInput === "2" || userInput.toLowerCase() === "events" || userInput.toLowerCase() === "event") {
+                currentCategory = "events";
+            } else if (userInput === "3" || userInput.toLowerCase() === "support" || userInput.toLowerCase() === "help") {
+                currentCategory = "support";
+            }
+
+            $.post("/chat", {
+                user_input: userInput,
+                category: currentCategory
+            }, function(response) {
+                var responses = response.split('<br>');
+                responses.forEach(function(r) {
+                    if (r.trim().includes("(Sentiment:")) {
+                        const parts = r.trim().split("(Sentiment:");
+                        const main = parts[0];
+                        const extra = "(Sentiment:" + parts[1];
+                        $("#chat-box").append(`<div class="chat-message bot-message">${main}</div>`);
+                        $("#chat-box").append(`<div class="chat-message bot-message ml-info">${extra}</div>`);
+                    } else {
+                        $("#chat-box").append(`<div class="chat-message bot-message">${r.trim()}</div>`);
+                    }
+                });
+
+                $("#chat-box").scrollTop($("#chat-box")[0].scrollHeight);
+                conversationHistory.push({role: "bot", message: response});
+
+                if (response.includes("You've selected Information")) {
+                    currentCategory = "information";
+                    $("#category-select").val("information");
+                    $("#category-selector").show();
+                } else if (response.includes("You've selected Events")) {
+                    currentCategory = "events";
+                    $("#category-select").val("events");
+                    $("#category-selector").show();
+                } else if (response.includes("You've selected Support")) {
+                    currentCategory = "support";
+                    $("#category-select").val("support");
+                    $("#category-selector").show();
+                }
+            });
+
+            $("#user-input").val("");
+        }
+
+        function showHistory() {
+            var historyHTML = "";
+            conversationHistory.forEach(function(item) {
+                historyHTML += `<p><strong>${item.role === "user" ? "You" : "Bot"}:</strong> ${item.message}</p>`;
+            });
+            $("#history-content").html(historyHTML);
+            $("#overlay").show();
+            $("#history-dialog").show();
+        }
+
+        function closeHistory() {
+            $("#overlay").hide();
+            $("#history-dialog").hide();
+        }
+
+        $("#category-select").change(function() {
+            currentCategory = $(this).val();
+        });
+
+        $("#user-input").keypress(function(e) {
+            if (e.which === 13) {
+                sendMessage();
+                return false;
+            }
+        });
+
+        $(document).ready(function() {
+            $.post("/chat", { user_input: "initial_greeting" }, function(response) {
+                $("#chat-box").append('<div class="chat-message bot-message">' + response + '</div>');
+                conversationHistory.push({role: "bot", message: response});
+            });
+        });
+    </script>
+</body>
+</html>

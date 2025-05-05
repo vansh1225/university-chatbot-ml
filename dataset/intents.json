@@ -1,0 +1,295 @@
+{
+    "intents": [
+        {
+          "tag": "Hello",
+          "patterns":[
+            "Hello",
+            "Hi",
+            "hii",
+            "Hey",
+            "hey"
+          ],
+          
+            "responses":[
+              "Hello, Welcome to Illinois Institute of Technology"
+            ]
+          
+        },
+        {
+            "tag": "course_details",
+            "patterns": [
+                "What courses are offered?",
+                "List available courses"
+            ],
+            "responses": [
+                "We offer Computer Science, Data Science, and AI courses."
+            ]
+        },
+        {
+            "tag": "university_details",
+            "patterns": [
+                "Tell me about the university",
+                "What is the university name?"
+            ],
+            "responses": [
+                "The university is Illinois Institute of Technology University, established in 1950."
+            ]
+        },
+        {
+            "tag": "student_info",
+            "patterns": [
+                "How can I check my student details?",
+                "Where is my profile?"
+            ],
+            "responses": [
+                "You can check your student details in the university portal."
+            ]
+        },
+        {
+            "tag": "admission",
+            "patterns": [
+                "How to apply for admission?",
+                "Admission process?"
+            ],
+            "responses": [
+                "Visit our admission page and fill out the online application form."
+            ]
+        },
+        {
+            "tag": "admissions_general",
+            "patterns": [
+              "How do I apply to IIT?",
+              "What are the admission requirements?",
+              "Tell me about the application process",
+              "When are the application deadlines?",
+              "How can I apply for admission?",
+              "What documents do I need for admission?",
+              "Is there an application fee?"
+            ],
+            "responses": [
+              "Here's information about our admissions process. You can apply online through our admissions portal."
+            ]
+          },
+          {
+            "tag": "undergraduate_admission",
+            "patterns": [
+              "What are the requirements for freshman admission?",
+              "Do you need SAT scores?",
+              "What GPA do I need to get in?",
+              "How do I apply as a transfer student?",
+              "What are the transfer requirements?",
+              "Do you accept AP credits?"
+            ],
+            "responses": [
+              "Our undergraduate admission requirements include academic records, standardized test scores, and other supporting documents."
+            ]
+          },
+          {
+            "tag": "graduate_admission",
+            "patterns": [
+              "How do I apply for graduate school?",
+              "What are the graduate program requirements?",
+              "Do I need GRE for graduate admission?",
+              "What are the requirements for international graduate students?",
+              "Graduate school application deadline"
+            ],
+            "responses": [
+              "Graduate admission requirements vary by program. Please check specific program requirements on our website."
+            ]
+          },
+          {
+            "tag": "financial_aid",
+            "patterns": [
+              "How can I apply for financial aid?",
+              "What scholarships are available?",
+              "Do you offer merit scholarships?",
+              "FAFSA information",
+              "Cost of attendance",
+              "Tuition fees",
+              "Are there payment plans available?"
+            ],
+            "responses": [
+              "We offer various financial aid options including scholarships, grants, and payment plans."
+            ]
+          },
+          {
+            "tag": "academic_programs",
+            "patterns": [
+              "What majors do you offer?",
+              "Tell me about your engineering programs",
+              "What degrees are available?",
+              "Do you have computer science?",
+              "What programs are available?",
+              "List of departments",
+              "Available courses"
+            ],
+            "responses": [
+              "IIT offers a wide range of undergraduate and graduate programs across various fields of study."
+            ]
+          },
+          {
+            "tag": "campus_life",
+            "patterns": [
+              "What is student life like?",
+              "Tell me about housing options",
+              "Are there dorms on campus?",
+              "What dining options are available?",
+              "Campus activities",
+              "Student organizations",
+              "Sports and recreation"
+            ],
+            "responses": [
+              "Our campus offers diverse housing options, dining facilities, and numerous student activities and organizations."
+            ]
+          },
+          {
+            "tag": "facilities",
+            "patterns": [
+              "Where is the library?",
+              "Computer lab locations",
+              "Research facilities",
+              "Athletic facilities",
+              "Study spaces",
+              "Where can I print?",
+              "Is there a gym on campus?"
+            ],
+            "responses": [
+              "IIT provides various facilities including libraries, laboratories, athletic centers, and study spaces."
+            ]
+          },
+          {
+            "tag": "international_students",
+            "patterns": [
+              "International student requirements",
+              "Do I need TOEFL?",
+              "Visa information",
+              "International student services",
+              "ESL programs",
+              "International student orientation"
+            ],
+            "responses": [
+              "We provide comprehensive support services for international students, including admission guidance and visa assistance."
+            ]
+          },
+          {
+            "tag": "contact_info",
+            "patterns": [
+              "How do I contact admissions?",
+              "Where is the registrar's office?",
+              "Department contact information",
+              "Email address",
+              "Phone number",
+              "Office hours",
+              "Campus address"
+            ],
+            "responses": [
+              "Contact information for specific departments and offices can be found on our website."
+            ]
+          },
+          {
+            "tag": "career_services",
+            "patterns": [
+              "Career center location",
+              "Job placement services",
+              "Internship opportunities",
+              "Resume help",
+              "Career fairs",
+              "Job search assistance",
+              "Career counseling"
+            ],
+            "responses": [
+              "Our Career Services office provides comprehensive career development support and job search assistance."
+            ]
+          },
+          {
+            "tag": "campus_safety",
+            "patterns": [
+              "Campus security",
+              "Emergency contacts",
+              "Safety measures",
+              "Public safety office",
+              "Emergency procedures",
+              "Security escorts",
+              "Report an incident"
+            ],
+            "responses": [
+              "IIT maintains a comprehensive campus safety program with 24/7 security services."
+            ]
+          },
+          {
+            "tag": "cs_programs",
+            "patterns": [
+              "What CS degrees do you offer?",
+              "Tell me about the computer science program",
+              "Do you have a masters in computer science?",
+              "CS degree requirements",
+              "Computer science concentrations",
+              "CS program information",
+              "PhD in computer science"
+            ],
+            "responses": [
+              "Our Computer Science department offers BS, MS, and PhD programs with various specializations."
+            ]
+          },
+          {
+            "tag": "cs_courses",
+            "patterns": [
+              "What CS courses are available?",
+              "Computer science course list",
+              "Programming classes",
+              "CS electives",
+              "Required CS courses",
+              "Advanced CS courses",
+              "CS course prerequisites"
+            ],
+            "responses": [
+              "We offer a wide range of computer science courses from introductory programming to advanced topics in AI, cybersecurity, and more."
+            ]
+          },
+          {
+            "tag": "cs_faculty",
+            "patterns": [
+              "Who are the CS professors?",
+              "Computer science faculty",
+              "CS department staff",
+              "CS research advisors",
+              "Computer science department head",
+              "CS professor office hours",
+              "Faculty research areas"
+            ],
+            "responses": [
+              "Our Computer Science faculty includes experts in various fields of computer science and information technology."
+            ]
+          },
+          {
+            "tag": "cs_research",
+            "patterns": [
+              "CS research opportunities",
+              "Computer science labs",
+              "Research areas in CS",
+              "CS research projects",
+              "Join CS research group",
+              "Undergraduate research in CS",
+              "Graduate research opportunities"
+            ],
+            "responses": [
+              "The Computer Science department conducts research in various areas including AI, cybersecurity, data science, and software engineering."
+            ]
+          },
+          {
+            "tag": "cs_resources",
+            "patterns": [
+              "CS lab access",
+              "Computer science resources",
+              "CS software licenses",
+              "Programming tools",
+              "CS tutoring",
+              "Computer labs",
+              "CS student resources"
+            ],
+            "responses": [
+              "We provide various resources for CS students including computer labs, software licenses, and tutoring services."
+            ]
+          }
+    ]
+}

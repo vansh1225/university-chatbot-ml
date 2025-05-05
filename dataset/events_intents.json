@@ -1,0 +1,70 @@
+{
+    "intents": [
+        {
+            "tag": "upcoming_events",
+            "patterns": [
+                "What events are coming up?",
+                "Upcoming campus events",
+                "Events this month",
+                "Event calendar",
+                "What's happening on campus?"
+            ],
+            "responses": [
+                "Our upcoming events include the Spring Career Fair next Tuesday, the CS Department Open House on Friday, and the Student Organization Fair this weekend. Check out events.iit.edu for a complete calendar of all campus activities."
+            ]
+        },
+        {
+            "tag": "academic_calendar",
+            "patterns": [
+                "When does the semester start?",
+                "Academic calendar",
+                "Important academic dates",
+                "Final exam schedule",
+                "Holiday breaks",
+                "When is spring break?"
+            ],
+            "responses": [
+                "The current academic calendar includes the following key dates: Fall semester begins August 22, Thanksgiving break is November 23-27, Final exams are December 12-16, Spring semester begins January 10, Spring break is March 13-17, and Commencement is May 13."
+            ]
+        },
+        {
+            "tag": "registration_deadlines",
+            "patterns": [
+                "When can I register for classes?",
+                "Registration deadlines",
+                "Class registration dates",
+                "Add/drop deadline",
+                "When does registration open?"
+            ],
+            "responses": [
+                "Registration for the next semester typically opens in stages: Graduate students can register starting October 31, Seniors on November 2, Juniors on November 3, Sophomores on November 4, and Freshmen on November 7. The add/drop period ends two weeks after classes begin. Check your myIIT portal for your specific registration time."
+            ]
+        },
+        {
+            "tag": "career_fairs",
+            "patterns": [
+                "When is the next career fair?",
+                "Career fair information",
+                "Job fair dates",
+                "Employer recruitment events",
+                "Interview days"
+            ],
+            "responses": [
+                "Our next Career Fair is scheduled for October 17 from 12-4pm in Hermann Hall. Over 150 companies will be attending, including Google, Microsoft, Boeing, and many others. Before the fair, we're hosting resume workshops on October 10-12. Business attire is required, and don't forget to bring copies of your resume!"
+            ]
+        },
+        {
+            "tag": "workshops",
+            "patterns": [
+                "Any upcoming workshops?",
+                "Professional development events",
+                "Training sessions",
+                "Learning opportunities",
+                "Skill workshops"
+            ],
+            "responses": [
+                "We have several workshops coming up: 'Python for Data Science' on Wednesday at 5pm, 'Resume Building' on Thursday at 3pm, and 'Interview Skills' next Monday at 4pm. All workshops will be held in the MTCC and are free for students. Register through the Career Services portal to reserve your spot."
+            ]
+        }
+    ]
+}

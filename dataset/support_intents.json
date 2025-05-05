@@ -1,0 +1,74 @@
+{
+    "intents": [
+        {
+            "tag": "technical_support",
+            "patterns": [
+                "I can't login to my account",
+                "Password reset help",
+                "Email access issues",
+                "Cannot access campus wifi",
+                "Computer lab problems",
+                "MyIIT portal issues"
+            ],
+            "responses": [
+                "For technical issues, please contact our OTS Help Desk at helpdesk@iit.edu or call 312-567-3375. They're available Monday-Friday from 8am-6pm. For password resets, you can also use the self-service option at password.iit.edu. If it's an urgent issue outside of business hours, call the emergency support line at 312-567-3380."
+            ]
+        },
+        {
+            "tag": "academic_advising",
+            "patterns": [
+                "How do I meet with my advisor?",
+                "Need help with course selection",
+                "Academic advising appointment",
+                "Who is my academic advisor?",
+                "Change my major",
+                "Registration hold"
+            ],
+            "responses": [
+                "To schedule an appointment with your academic advisor, log into the myIIT portal and use the 'Advising' tab. You can see who your assigned advisor is and their available time slots. For immediate concerns, most departments have drop-in advising hours daily from 1-3pm. If you need to change your major, you'll need to fill out a form in the Registrar's Office."
+            ]
+        },
+        {
+            "tag": "financial_aid_help",
+            "patterns": [
+                "Financial aid questions",
+                "Scholarship application help",
+                "FAFSA assistance",
+                "Tuition payment issues",
+                "Payment plan options",
+                "Billing questions"
+            ],
+            "responses": [
+                "For financial aid support, visit the Financial Aid Office in the MTCC building, Room 106, or call 312-567-7219. Their office hours are Monday-Friday, 8:30am-5pm. They can help with FAFSA applications, scholarship information, payment plans, and billing questions. You can also email fa@iit.edu for assistance."
+            ]
+        },
+        {
+            "tag": "housing_issues",
+            "patterns": [
+                "Dormitory problems",
+                "Room change request",
+                "Roommate issues",
+                "Housing application",
+                "Residence hall maintenance",
+                "Off-campus housing"
+            ],
+            "responses": [
+                "For residence hall issues, contact your RA first or the Residence Hall Office at 312-567-5075. For maintenance requests, submit a ticket through the housing portal. Room change requests must be submitted two weeks before the desired change date. For off-campus housing information, visit the Housing Office in MTCC Room 310."
+            ]
+        },
+        {
+            "tag": "mental_health",
+            "patterns": [
+                "Counseling services",
+                "Mental health support",
+                "Feeling stressed",
+                "Need someone to talk to",
+                "Therapy options",
+                "Wellness resources"
+            ],
+            "responses": [
+                "Our Student Health and Wellness Center offers confidential counseling services to all students. You can schedule an appointment by calling 312-567-7550 or visiting their office in the IIT Tower, 3rd floor. They offer individual counseling, group sessions, and workshops for stress management and other mental health topics. For urgent situations after hours, call the 24/7 crisis line at 312-567-7575."
+            ]
+        }
+    ]
+}
